@@ -1,7 +1,7 @@
 
 
 // const { pickPlanet, addDestinationInfo, formSubmission } = require("./scriptHelper");
-require("./scriptHelper")
+// require("./scriptHelper")
 
 window.addEventListener("load", function() {
     let form = document.querySelector("form");

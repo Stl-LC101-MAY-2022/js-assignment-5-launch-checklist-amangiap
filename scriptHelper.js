@@ -1,7 +1,7 @@
-// const { getElementError } = require('@testing-library/dom');
+const { getElementError } = require('@testing-library/dom');
 
 // // Write your helper functions here!
-// require('isomorphic-fetch');
+require('isomorphic-fetch');
 //pickPlanet
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     let missionTarget = document.getElementByID('missionTarget');
@@ -29,10 +29,15 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+        let pilotStatus = document.getElementById('pilotStatus');
+    let copilotStatus = document.getElementById('copilotStatus');
+    let fuelStatus = document.getElementById('fuelStatus');
+    let launchStatus = document.getElementById('launchStatus');
+    let cargoStatus = document.getElementById('cargoStatus');
     if (validateInput(pilot) === `Empty` || validateInput(copilot) === `Empty` || validateInput(fuelLevel) === `Empty` || validateInput(cargoLevel) === `Empty`){
     alert('All fields are required');
    } 
-   else if (validateInput(fuelLevel) === `Not a number` || validateInput(cargoMass) === `Not a number`) {
+   else if (validateInput(fuelLevel) === `Not a number` || validateInput(cargoLevel) === `Not a number`) {
     alert('Please enter numerical values for Fuel Level and Cargo Mass');
    } 
    else if (validateInput(pilot) === `Is a number` || validateInput(copilot)=== `Is a number`){
