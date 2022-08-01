@@ -21,7 +21,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 function validateInput(testInput) {
    if (testInput === "") {
     return `Empty`
-   } else if (testInput === Number) {
+   } else if (!isNaN(testInput)) {
     return `Is a number`
    } else if (isNaN(testInput)) {
     return `Not a number`
@@ -29,43 +29,45 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-        let pilotStatus = document.getElementById('pilotStatus');
-    let copilotStatus = document.getElementById('copilotStatus');
-    let fuelStatus = document.getElementById('fuelStatus');
-    let launchStatus = document.getElementById('launchStatus');
-    let cargoStatus = document.getElementById('cargoStatus');
-    if (validateInput(pilot) === `Empty` || validateInput(copilot) === `Empty` || validateInput(fuelLevel) === `Empty` || validateInput(cargoLevel) === `Empty`){
-    alert('All fields are required');
-   } 
-   else if (validateInput(fuelLevel) === `Not a number` || validateInput(cargoLevel) === `Not a number`) {
-    alert('Please enter numerical values for Fuel Level and Cargo Mass');
-   } 
-   else if (validateInput(pilot) === `Is a number` || validateInput(copilot)=== `Is a number`){
-    alert('Please do not enter numerical values for the name of pilot or co-pilot')
-   } 
-   else {
-    pilotStatus.innerHTML = `Pilot ${pilot} is ready`;
-    copilotStatus.innerHTML = `Co-Pilot ${copilot} is ready`
-    list.style.visibility = 'hidden';
-   }
+    console.log("1")
+//         let pilotStatus = document.getElementById('pilotStatus');
+//     let copilotStatus = document.getElementById('copilotStatus');
+//     let fuelStatus = document.getElementById('fuelStatus');
+//     let launchStatus = document.getElementById('launchStatus');
+//     let cargoStatus = document.getElementById('cargoStatus');
+//     
+//     if (validateInput(pilotStatus) === `Empty` || validateInput(copilotStatus) === `Empty` || validateInput(fuelStatus) === `Empty` || validateInput(cargoStatus) === `Empty`){
+//     alert('All fields are required');
+//    } 
+//    else if (validateInput(fuelStatus) === `Not a number` || validateInput(cargoStatus) === `Not a number`) {
+//     alert('Please enter numerical values for Fuel Level and Cargo Mass');
+//    } 
+//    else if (validateInput(pilotStatus) === `Is a number` || validateInput(copilotStatus) === `Is a number`){
+//     alert('Please do not enter numerical values for the name of pilot or co-pilot')
+//    } 
+//    else {
+//     pilotStatus.innerHTML = `Pilot ${pilot} is ready`;
+//     copilotStatus.innerHTML = `Co-Pilot ${copilot} is ready`
+//     list.style.visibility = 'hidden';
+//    }
 
-   if (Number(fuelLevel) < 10000) {
-    fuelStatus.innerHTML = `Not enough fuel`;
-    list.style.visibility = `visible`;
-    launchStatus.innerHTML = `Shuttle not ready for launch`;
-    launchStatus.style.color = `red`;
-   } else if (Number(cargoLevel) > 10000) {
-    cargoStatus.innerHTML = `Cargo too heavy for launch`;
-    list.style.visibility = `visible`;
-    launchStatus.innerHTML = `Shuttle not ready for launch`;
-    launchStatus.style.color = `red`;
-   } else if (Number(cargoLevel) < 10000 && Number(fuelLevel) > 10000) {
-    list.style.visibility = `visible`;
-    fuelStatus.innerHTML = `Enough fuel for travel`;
-    cargoStatus.innerHTML = `Cargo light enough for takeoff`;
-    launchStatus.innerHTML = `Shuttle ready for launch`;
-    launchStatus.style.color = `green`;
-   }
+//    if (Number(fuelLevel) < 10000) {
+//     fuelStatus.innerHTML = `Not enough fuel`;
+//     list.style.visibility = `visible`;
+//     launchStatus.innerHTML = `Shuttle not ready for launch`;
+//     launchStatus.style.color = `red`;
+//    } else if (Number(cargoLevel) > 10000) {
+//     cargoStatus.innerHTML = `Cargo too heavy for launch`;
+//     list.style.visibility = `visible`;
+//     launchStatus.innerHTML = `Shuttle not ready for launch`;
+//     launchStatus.style.color = `red`;
+//    } else if (Number(cargoLevel) < 10000 && Number(fuelLevel) > 10000) {
+//     list.style.visibility = `visible`;
+//     fuelStatus.innerHTML = `Enough fuel for travel`;
+//     cargoStatus.innerHTML = `Cargo light enough for takeoff`;
+//     launchStatus.innerHTML = `Shuttle ready for launch`;
+//     launchStatus.style.color = `green`;
+//    }
 }
 
 async function myFetch() {
