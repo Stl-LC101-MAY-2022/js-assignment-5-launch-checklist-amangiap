@@ -2,7 +2,7 @@ const { getElementError } = require('@testing-library/dom');
 
 // // Write your helper functions here!
 require('isomorphic-fetch');
-//pickPlanet
+
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     let missionTarget = document.getElementById('missionTarget');
     missionTarget.innerHTML = `
@@ -18,15 +18,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
             `
 }
 
-// function validateInput(testInput) {
-//     if (testInput === "") {
-//      return `Empty`
-//     } else if (testInput === Number) {
-//      return `Is a number`
-//     } else if (isNaN(testInput)) {
-//      return `Not a number`
-//     }
-//  }
+
 function validateInput(testInput) {
     if (testInput === "" || testInput === null || testInput === 0) {
         return `Empty`
