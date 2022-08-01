@@ -16,13 +16,14 @@ window.addEventListener("load", function() {
     });
 
    
-   
+
    let listedPlanets;
    let listedPlanetsResponse = myFetch();
    listedPlanetsResponse.then(function (result) {
        listedPlanets = result; 
    }).then(function () {
        console.log(listedPlanets);
+       
         let planet = pickPlanet(listedPlanets);
         let name = planet.name;
         let diameter = planet.diameter;
@@ -30,7 +31,7 @@ window.addEventListener("load", function() {
         let distance = planet.distance;
         let imageUrl = planet.image;
         let moons = planet.moons;
-        addDestinationInfo(document, name, diameter, star, distance, imageUrl, moons)
+        addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl)
     })
    
 });

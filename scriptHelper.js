@@ -14,10 +14,9 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                 <li>Distance from Earth: ${distance}</li>
                 <liNumber of Moons: ${moons}</li>
             <ol>
-            <img src='${image}'>
+            <img src='${imageUrl}'>
             `
 }
-
 
 function validateInput(testInput) {
     if (testInput === "" || testInput === null || testInput === 0) {
